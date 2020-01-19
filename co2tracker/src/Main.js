@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Chart } from "react-charts";
+<<<<<<< HEAD
 import  Dropdown  from "./Dropdown.js";
+=======
+import Dropdown from "./Dropdown.js";
+>>>>>>> ef9cb4d2e7ad960be7cdbb7023506994da131bc1
 
 export default function Main(props) {
 	// const data = [
