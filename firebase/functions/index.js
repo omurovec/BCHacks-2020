@@ -25,7 +25,7 @@ exports.getModel = functions.https.onRequest(
 						var dataBase = db.db("BCHacks2020");
 						var collection = dataBase.collection(
 							"Emissions"
-						);
+                        );
 
 						var query = {
 							$and: [
@@ -36,11 +36,7 @@ exports.getModel = functions.https.onRequest(
 						};
 
 						const queryResponse = await collection
-							.find(query, {model: 1})
-							.toArray()
-							.catch(error => {
-								console.log(error);
-							});
+							.distinct("model", query, {fields : {model : 1}});
 						response.status(200).send(queryResponse);
 					} else {
 						console.log(err);
@@ -86,7 +82,7 @@ exports.getCO2 = functions.https.onRequest(
 						console.log(year);
 
 						collection
-							.findOne(query, {co2 : 1})
+							.distinct("co2" , query,{fields :  {co2 : 1}})
 							.then(queryResponse => {
 								response.status(200).send(queryResponse);
 								return;
