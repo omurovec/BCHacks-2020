@@ -21,6 +21,7 @@ export default function Dropdown(props) {
 			<select
 				name="Year"
 				id="year"
+				defaultValue="selected"
 				onChange={() => {
 					const year = document.getElementById("year")
 						.value;
@@ -42,6 +43,7 @@ export default function Dropdown(props) {
 			<select
 				name="Make"
 				id="make"
+				defaultValue="selected"
 				onChange={() => {
 					const make = document.getElementById("make")
 						.value;
@@ -64,6 +66,7 @@ export default function Dropdown(props) {
 			<select
 				name="Model"
 				id="model"
+				defaultValue="selected"
 				onChange={() => {
 					functionHandler("getCO2", {
 						year: year,
@@ -87,16 +90,21 @@ export default function Dropdown(props) {
 
 function List(props) {
 	if (props.data.length > 0) {
-		return props.data.map(element => {
-			return (
-				<option key={element} value={element}>
-					{element}
-				</option>
-			);
-		});
+		return [
+			<option key="default" value="default">
+				select
+			</option>,
+			...props.data.map(element => {
+				return (
+					<option key={element} value={element}>
+						{element}
+					</option>
+				);
+			})
+		];
 	} else if (props.data === props.default) {
 		return (
-			<option value="null" disabled>
+			<option value="null" disabled selected="selected">
 				{props.message1}
 			</option>
 		);
