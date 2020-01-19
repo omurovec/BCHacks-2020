@@ -47,8 +47,8 @@ export default function Main(props) {
 			<div
 				className="body"
 				style={{
-					width: "400px",
-					height: "300px"
+					width: "80vw",
+					height: "60vh"
 				}}
 			>
 				<Chart data={formatData(data)} axes={axes} />
