@@ -51,6 +51,9 @@ export default function Main(props) {
 					height: "60vh"
 				}}
 			>
+				<h1>Your last Month in Emissions</h1>
+				<h2 className="y-axis">Grams of CO2 Produced</h2>
+				<h2 className="x-axis">Past 30 Days</h2>
 				<Chart data={formatData(data)} axes={axes} />
 			</div>
 		);

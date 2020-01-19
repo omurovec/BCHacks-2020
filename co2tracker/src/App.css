@@ -49,6 +49,24 @@ html {
   background-color: #f3f3f3;
 }
 
+.body h1 {
+  position: relative;
+  top: -18vh;
+}
+
+.body .y-axis {
+  position: fixed;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  left: -18px;
+  top: 50%;
+}
+
+.body .x-axis {
+  position: fixed;
+  bottom: 50px;
+}
+
 .upload-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,6 +124,7 @@ input[type="file"] {
 }
 
 .ReactChart {
+  margin-top: -10vw;
   width: 80vw;
   height: 20vh;
 }
@@ -139,12 +158,6 @@ select {
   overflow-y: scroll;
 }
 
-.alignRight {
-  float: right;
-  margin-top: 22px;
-  margin-right: 15px;
-}
-
 .tutorial {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -175,7 +188,35 @@ select {
 }
 
 .arrows {
-  width: 35px;
+  width: 22px;
+  padding: 8px;
+  height: auto;
   vertical-align: middle;
+}
+
+.toggle-open {
+  height: 100%;
+  padding: 0 25px;
+  font-family: "Roboto";
+  font-size: 18px;
+  color: white;
+  background-color: #4caf50;
+  border: none;
+}
+
+.toggle-open:hover {
+  background-color: #3d8f40;
+  cursor: pointer;
+}
+
+.toggle-close {
+  font-size: 140px;
+  font-weight: lighter;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
 }
 /*# sourceMappingURL=App.css.map */
