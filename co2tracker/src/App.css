@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 html {
   font-family: "Roboto";
 }
@@ -24,9 +25,12 @@ html {
 }
 
 .App-header .title {
+  font-family: "Raleway";
+  font-weight: 800;
   margin-right: auto;
   margin-left: 15px;
   font-size: 22px;
+  padding: 5px;
 }
 
 .body {
