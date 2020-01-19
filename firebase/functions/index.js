@@ -24,6 +24,8 @@ exports.getModel = functions.https.onRequest((request, response) => {
 
             const queryResponse = await collection.find(query).toArray().catch(error=>{console.log(error)});
             response.status(200).send(queryResponse);
+        } else {
+            console.log(err);
         }
     });
 
@@ -53,24 +55,48 @@ exports.getCO2 = functions.https.onRequest((request, response) => {
             collection.findOne(query).then( (queryResponse) => {response.status(200).send(queryResponse); return} ).catch(error=>{console.log(error)});
 
            
+        } else {
+            console.log(err);
         }
     });
 
 });
 
 //Get List of Makes
-exports.getMakes = functions.https.onRequest((request, response) => {
-    console.log("1");
+exports.getMake = functions.https.onRequest((request, response) => {
+
+    var year = request.body.year;
+
     var MongoClient = require('mongodb').MongoClient;
-    console.log("2");
+
     // Connect to the db
     MongoClient.connect("mongodb://BCHacks2020:BCHacks2020@cluster0-shard-00-00-jvqfv.gcp.mongodb.net:27017,cluster0-shard-00-01-jvqfv.gcp.mongodb.net:27017,cluster0-shard-00-02-jvqfv.gcp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority", (err, db) => {
         if(!err) {
-            console.log("3");
+
             var dataBase = db.db("BCHacks2020");
             var collection = dataBase.collection("Emissions");
-            console.log("4");
-            var makes = collection.distinct("make").then( (queryResponse) => {response.status(200).send(queryResponse); return} ).catch(error=>{console.log(error)})
+
+            var makes = collection.distinct("make", {year : year}).then( (queryResponse) => {response.status(200).send(queryResponse); return} ).catch(error=>{console.log(error)})
+        } else {
+            console.log(err);
+        }
+        db.close();
+    });
+
+});
+
+exports.getYear = functions.https.onRequest((request, response) => {
+
+    var MongoClient = require('mongodb').MongoClient;
+
+    // Connect to the db
+    MongoClient.connect("mongodb://BCHacks2020:BCHacks2020@cluster0-shard-00-00-jvqfv.gcp.mongodb.net:27017,cluster0-shard-00-01-jvqfv.gcp.mongodb.net:27017,cluster0-shard-00-02-jvqfv.gcp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority", (err, db) => {
+        if(!err) {
+
+            var dataBase = db.db("BCHacks2020");
+            var collection = dataBase.collection("Emissions");
+
+            var makes = collection.distinct("year", {$and : [{year : {$gte : "1985"}}, {year : {$lte : "3000"}}]}).then( (queryResponse) => {response.status(200).send(queryResponse); return} ).catch(error=>{console.log(error)})
         } else {
             console.log(err);
         }
