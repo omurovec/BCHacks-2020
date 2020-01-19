@@ -89,10 +89,16 @@ function Upload(props) {
 	if (props.file) {
 		return (
 			<div className="upload-container">
-				<img
-					className="upload-image"
-					src={require("./Assets/check.svg")}
-				/>
+				<div className="input-label">
+					<img
+						className="upload-image"
+						src={require("./Assets/check.svg")}
+						style={{ width: "100px" }}
+					/>
+					<p className="upload-message">
+						File uploaded successfully
+					</p>
+				</div>
 			</div>
 		);
 	} else {
@@ -103,8 +109,11 @@ function Upload(props) {
 						className="upload-image"
 						src={require("./Assets/upload.svg")}
 					/>
-					Click here to upload your Google location data
-					from this year. See top right for help.
+
+					<p className="upload-message">
+						Click here to upload your Google location data
+						from this year. See top right for help.
+					</p>
 				</label>
 				<input
 					id="file-upload"
