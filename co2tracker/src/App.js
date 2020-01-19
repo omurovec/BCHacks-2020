@@ -24,15 +24,14 @@ function Popup() {
 	if (collapsed) {
 		return (
 			<div id="overlay">
-				<div className="alignRight">
-					<button
-						onClick={() => {
-							toggle(!collapsed);
-						}}
-					>
-						&times;
-					</button>
-				</div>
+				<button
+					className="toggle-close"
+					onClick={() => {
+						toggle(!collapsed);
+					}}
+				>
+					&times;
+				</button>
 				<div className="tutorial">
 					<HowTo />
 				</div>
@@ -41,15 +40,14 @@ function Popup() {
 	} else {
 		return (
 			<div>
-				<div className="alignRight">
-					<button
-						onClick={() => {
-							toggle(!collapsed);
-						}}
-					>
-						Open Tutorial
-					</button>
-				</div>
+				<button
+					className="toggle-open"
+					onClick={() => {
+						toggle(!collapsed);
+					}}
+				>
+					Get Started
+				</button>
 			</div>
 		);
 	}
