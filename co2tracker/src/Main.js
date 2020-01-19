@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Chart } from "react-charts";
-import { Dropdown } from "./Dropdown.js";
+import  Dropdown  from "./Dropdown.js";
 
 export default function Main(props) {
 	// const data = [
@@ -81,7 +81,6 @@ function Upload(props) {
 				>
 					Show Me My Emissions!
 				</button>
-				<Dropdown />
 			</div>
 		);
 	} else {
@@ -103,6 +102,7 @@ function Upload(props) {
 						props.setFile(event.target.files[0]);
 					}}
 				></input>
+				<Dropdown />
 			</div>
 		);
 	}
