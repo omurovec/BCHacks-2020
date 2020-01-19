@@ -36,7 +36,7 @@ exports.getModel = functions.https.onRequest(
 						};
 
 						const queryResponse = await collection
-							.find(query)
+							.find(query, {model: 1})
 							.toArray()
 							.catch(error => {
 								console.log(error);
@@ -86,7 +86,7 @@ exports.getCO2 = functions.https.onRequest(
 						console.log(year);
 
 						collection
-							.findOne(query)
+							.findOne(query, {co2 : 1})
 							.then(queryResponse => {
 								response.status(200).send(queryResponse);
 								return;
