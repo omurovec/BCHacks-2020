@@ -71,15 +71,19 @@ html {
   cursor: pointer;
   border-radius: 15px;
   color: black;
-  padding: 15px;
+  padding: 60px;
   text-align: center;
 }
 
 .upload-image {
   width: 150px;
   margin: auto;
-  padding: 50px;
   padding-top: 0;
+}
+
+.upload-message {
+  width: 250px;
+  text-align: center;
 }
 
 .process-button {
@@ -100,6 +104,22 @@ input[type="file"] {
   display: none;
 }
 
+.ReactChart {
+  width: 80vw;
+  height: 20vh;
+}
+
+select {
+  background-color: white;
+  min-width: 200px;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Roboto";
+  padding: 10px;
+  margin-bottom: 60px;
+  border: none;
+}
+
 #overlay {
   position: fixed;
   /* Sit on top of the page content */
@@ -111,7 +131,7 @@ input[type="file"] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: white;
   /* Black background with opacity */
   z-index: 2;
   /* Specify a stack order in case you're using a different order for other elements */
