@@ -19,9 +19,15 @@ export default function Main(props) {
 	};
 
 	const axes = [
-		{ primary: true, type: "linear", position: "bottom" },
-		{ type: "linear", position: "left" }
+		{ primary: true, type: "ordinal", position: "bottom" },
+		{ type: "linear", position: "left", stacked: false }
 	];
+	const series = React.useMemo(
+		() => ({
+			type: 'bar'
+		}),
+		[]
+	)
 
 	const [file, setFile] = useState(0);
 	const [loading, setLoading] = useState(1);
@@ -54,7 +60,7 @@ export default function Main(props) {
 				<h1>Your last Month in Emissions</h1>
 				<h2 className="y-axis">Grams of CO2 Produced</h2>
 				<h2 className="x-axis">Past 30 Days</h2>
-				<Chart data={formatData(data)} axes={axes} />
+				<Chart data={formatData(data)} axes={axes} series={series} />
 			</div>
 		);
 	} else if (loading !== 1) {
