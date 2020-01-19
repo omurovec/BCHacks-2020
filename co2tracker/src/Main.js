@@ -12,7 +12,7 @@ export default function Main(props) {
 				data: data.map((item, index) => ({
 					x: index,
 					//CO2 CALCULATION
-					y: item.distance * co2
+					y: item.distance * co2 * 0.000621371
 				}))
 			}
 		];
