@@ -14,7 +14,7 @@ export default async (type, params) => {
 		redirect: "follow"
 	};
 
-	fetch(functionsURL + type, requestOptions)
+	return fetch(functionsURL + type, requestOptions)
 		.then(response => response.json())
 		.catch(error => console.log("error", error));
 };
