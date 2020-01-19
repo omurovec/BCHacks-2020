@@ -17,7 +17,7 @@ export default function Dropdown(props) {
 	});
 
 	return (
-		<div>
+		<div class="larger_arrows">
 			<select
 				name="Year"
 				id="year"
@@ -40,6 +40,7 @@ export default function Dropdown(props) {
 					message2="Error fetching years, please try again."
 				/>
 			</select>
+			<img className="arrows" src={require("./Assets/right_arrow.png") }></img>
 			<select
 				name="Make"
 				id="make"
@@ -63,6 +64,7 @@ export default function Dropdown(props) {
 					message2="No supported makes in this year."
 				/>
 			</select>
+			<img className="arrows" src={require("./Assets/right_arrow.png") }></img>
 			<select
 				name="Model"
 				id="model"
