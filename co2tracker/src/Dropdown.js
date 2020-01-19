@@ -4,7 +4,6 @@ import functionHandler from "./functions";
 export default function Dropdown(props) {
 	const [year, setYear] = useState(0);
 	const [make, setMake] = useState(1);
-	const [co2, setCo2] = useState(2);
 	const [YEARS, setYEARS] = useState(3);
 	const [MAKES, setMAKES] = useState(4);
 	const [MODELS, setMODELS] = useState(5);
@@ -46,6 +45,7 @@ export default function Dropdown(props) {
 				onChange={() => {
 					const make = document.getElementById("make")
 						.value;
+					setMake(make);
 					functionHandler("getModel", {
 						year: year,
 						make: make
@@ -70,7 +70,7 @@ export default function Dropdown(props) {
 						make: make,
 						model: document.getElementById("model").value
 					}).then(co2 => {
-						setCo2(co2);
+						props.setCO2(co2[0]);
 					});
 				}}
 			>
