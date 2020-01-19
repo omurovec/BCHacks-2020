@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import Main from "./Main";
 import "./App.css";
+import HowTo from "./HowTo";
 
 function App() {
 	return (
-		
 		<div className="App">
 			<div className="App-header">
 				<p className="title">
 					CO<sub>2</sub> Tracker
 				</p>
-				<Popup/>
-				
+				<Popup />
 			</div>
 			<div className="body">
 				<Main />
@@ -20,24 +19,36 @@ function App() {
 	);
 }
 
-function Popup(){
-	const [collapsed, toggle] = useState(0)
-	if(collapsed) {
-		return(
+function Popup() {
+	const [collapsed, toggle] = useState(0);
+	if (collapsed) {
+		return (
 			<div id="overlay">
-				<div class="alignRight">
-					<button onClick={() => {toggle(!collapsed)}} >&times;</button>
+				<div className="alignRight">
+					<button
+						onClick={() => {
+							toggle(!collapsed);
+						}}
+					>
+						&times;
+					</button>
 				</div>
-				<div class="tutorial">
-					<p>Hello World</p>
+				<div className="tutorial">
+					<HowTo />
 				</div>
 			</div>
 		);
 	} else {
-		return(
+		return (
 			<div>
-				<div class="alignRight">
-					<button onClick={() => {toggle(!collapsed)}} >Open Tutorial</button>
+				<div className="alignRight">
+					<button
+						onClick={() => {
+							toggle(!collapsed);
+						}}
+					>
+						Open Tutorial
+					</button>
 				</div>
 			</div>
 		);
