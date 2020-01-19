@@ -173,4 +173,9 @@ select {
 .how-to ol span {
   font-size: 16px;
 }
+
+.arrows {
+  width: 35px;
+  vertical-align: middle;
+}
 /*# sourceMappingURL=App.css.map */
