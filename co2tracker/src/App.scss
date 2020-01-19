@@ -48,6 +48,7 @@ html {
 	color: black;
 	padding: 60px;
 	text-align: center;
+	padding-top: 0;
 }
 
 .upload-image {
@@ -102,7 +103,7 @@ select {
 	bottom: 0;
 	background-color: white; /* Black background with opacity */
 	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-	cursor: pointer; /* Add a pointer on hover */
+	overflow-y: scroll;
 }
 
 .alignRight {
@@ -113,4 +114,23 @@ select {
 
 .tutorial {
 	justify-content: center;
+}
+
+.how-to {
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+
+	ol {
+		margin: 15vh 15vw;
+		font-size: 22px;
+
+		img {
+			width: 100%;
+		}
+
+		span {
+			font-size: 16px;
+		}
+	}
 }

@@ -73,6 +73,7 @@ html {
   color: black;
   padding: 60px;
   text-align: center;
+  padding-top: 0;
 }
 
 .upload-image {
@@ -135,8 +136,7 @@ select {
   /* Black background with opacity */
   z-index: 2;
   /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer;
-  /* Add a pointer on hover */
+  overflow-y: scroll;
 }
 
 .alignRight {
@@ -149,5 +149,28 @@ select {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.how-to {
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.how-to ol {
+  margin: 15vh 15vw;
+  font-size: 22px;
+}
+
+.how-to ol img {
+  width: 100%;
+}
+
+.how-to ol span {
+  font-size: 16px;
 }
 /*# sourceMappingURL=App.css.map */
